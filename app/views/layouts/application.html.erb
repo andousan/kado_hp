@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <header>
+      <% if admin_signed_in? %>
+      <p>管理人ページ</p>
+        <li>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+        </li>
+      <% else %>
+        <p>学生ページ</p>
+      <% end %>
+    </header>
+
     <%= yield %>
+
   </body>
 </html>
