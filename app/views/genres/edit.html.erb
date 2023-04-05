@@ -16,5 +16,7 @@
   <%= f.text_field :name %>
   
   <%= f.submit '保存' %>
+
+  <%= link_to "Destroy", genre_path(@genre.id), method: :delete, "data-confirm" => "Are you sure?" %>
   
 <% end %>
