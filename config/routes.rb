@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'books/new'
+  get 'books/show'
+  get 'books/edit'
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
