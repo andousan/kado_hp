@@ -31,3 +31,5 @@
 	
   <%= f.submit '投稿' %>
 <% end %>
+
+<h3><%= link_to "Destroy", genre_book_path(@genre, @book.id), method: :delete, "data-confirm" => "Are you sure?" %></h3>
