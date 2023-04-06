@@ -12,13 +12,46 @@
 
   <body>
     <header>
+    <li>
+      <%= link_to root_path do %>
+        ホーム
+      <% end %>
+    </li>
+    <li>
+      <%= link_to about_path do %>
+        角部屋
+      <% end %>
+    </li>
+    <li>
+      <%= link_to equipments_path do %>
+        設備
+      <% end %>
+    </li>
+    <li>
+      <%= link_to genres_path do %>
+        蔵書
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path do %>
+        使い方・ルール
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path do %>
+        裏部屋
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path do %>
+        オープンチャット
+      <% end %>
+    </li>
       <% if admin_signed_in? %>
       <p>管理人ページ</p>
         <li>
           <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
         </li>
-      <% else %>
-        <p>学生ページ</p>
       <% end %>
     </header>
 

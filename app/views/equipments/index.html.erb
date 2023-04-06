@@ -7,6 +7,12 @@
       <tr>
         <td><%= equipment.name %></td>
         <td><%= equipment.detail %></td>
+        <td>
+          <% if equipment.image.attached? %>
+            <%= image_tag equipment.image, size: "200x200" %>
+          <% else %>
+            <%= image_tag 'no_image', size: "200x200" %>
+          <% end %>
         <% if admin_signed_in? %>
           <td><%= link_to "編集", edit_equipment_path(equipment.id) %></td>
         <% end %>
@@ -27,6 +33,9 @@
 <%= form_with model: @equipment, url: equipments_path do |f| %>
   <h4>設備名</h4>
   <%= f.text_field :name %>
+
+  <h4>画像</h4>
+  <%= f.file_field :image, accept: "image/*" %>
 
   <h4>詳細</h4>
   <%= f.text_field :detail %>	
