@@ -18,3 +18,5 @@
   <%= f.text_field :detail %>	
   <%= f.submit '投稿' %>
 <% end %>
+
+<h3><%= link_to "Destroy", equipment_path(@equipment.id), method: :delete, "data-confirm" => "Are you sure?" %></h3>
