@@ -4,10 +4,7 @@
 
  <h4>name</h4>
  <ul>
-<% @genres.each do |genre| %>
-  <li><%= link_to genre.name, genre_path(genre) %></li>
-<% end %>
-<ul>
-</tbody>
-
-</table>
+  <% @genres.each do |genre| %>
+    <li><%= link_to genre.name, genre_path(genre) %></li>
+  <% end %>
+ <ul>

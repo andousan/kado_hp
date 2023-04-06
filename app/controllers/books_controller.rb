@@ -4,16 +4,25 @@ class BooksController < ApplicationController
     @book = @genre.books.new(book_params)
     @book.genre_id = @genre.id
     if @book.save
-      redirect_to genre_book_path(@genre.id, @book.id)
+      redirect_to genre_path(@genre.id)
     else
       render "genres/show.html.erb"
     end
   end
 
   def edit
+    @book = Book.find(params[:id])
+    @genre = @book.genre
   end
   
   def update
+    @book = Book.find(params[:id])
+    @genre = @book.genre
+    if @book.update(book_params)
+      redirect_to genre_path(@genre.id)
+    else
+      render :edit
+    end
   end
 
   private
