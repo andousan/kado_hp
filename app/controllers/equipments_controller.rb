@@ -9,14 +9,22 @@ class EquipmentsController < ApplicationController
     if @equipment.save
       redirect_to equipments_path
     else
+      @equipments = Equipment.all
       render :index
     end
   end
 
   def edit
+    @equipment = Equipment.find(params[:id])
   end
 
   def update
+    @equipment = Equipment.find(params[:id])
+    if @equipment.update(equipment_params)
+      redirect_to equipments_path
+    else
+      render :edit
+    end
   end
 
   def destroy
