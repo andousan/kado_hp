@@ -18,6 +18,7 @@ class GenresController < ApplicationController
 
   def show
     @genre = Genre.find(params[:id])
+    @book = Book.new
   end
 
   def edit
